@@ -66,6 +66,22 @@ if __name__ == '__main__':
     poli.agregar_termino(0,-1)
     print(poli)
     print(poli.contenido)
+    print(poli.grado_mayor)
+    grado_test= 2
+    print(f'Existe el grado {grado_test}? : {poli.existe_grado(grado_test)}')
+    termino= '3x2'
+    print(f'existe el termino{termino}? : {poli.existe_termino(termino)}')
+    poli1= Polinomio()
+    poli1.agregar_termino(2,3)
+    poli1.agregar_termino(0,-1)
+    poli2= Polinomio()
+    poli2.agregar_termino(1,2)
+    poli2.agregar_termino(0,-1)
+    resultado= Polinomio()
+    resultado.restar(poli1, poli2)
+    print(resultado)
+
+    
         
 
 
