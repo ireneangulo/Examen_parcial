@@ -7,6 +7,7 @@ def crear_matriz(numero_filas, numero_columnas):
 def determinante_grado_3(m):
     A1= m[0][0]*m[1][1]*m[2][2]+m[1][0]*m[2][1]*m[0][2]+m[2][0]*m[1][2]*m[2][1]
     A2= m[0][2]*m[1][1]*m[2][0]+m[1][2]*m[2][1]*m[0][0]+m[0][1]*m[1][0]*m[2][2]
+    
     return A1-A2
 def dibujar_matriz(m):
     print("La matriz es: ")
