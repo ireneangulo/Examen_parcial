@@ -4,7 +4,7 @@ class datoPolinomio(object):
     def __init__(self, valor, termino):
         self.valor= valor
         self.termino= termino
-class Polinonio(object): 
+class Polinomio(object): 
     def __init__(self):
         self.grado_mayor= 0
         self.contenido= {}
@@ -30,5 +30,44 @@ class Polinonio(object):
             except: 
                 self.agregar_termino(i, total)
                 pass
+    def elimina_grado(self, grado): 
+        del self.contenido[grado]
+        if grado == self.grado_mayor:
+            self.grado_mayor= max(self.contenido.keys())
+
+    def existe_grado(self, grado):
+        try: 
+            return self.contenido[grado] is not None
+        except: 
+            return False
+    def existe_termino(self, termino):
+        valor= 1 if termino.split('x')[0] == '' else int(termino.split('x')[0])
+        grado=  1 if termino.split('x')[1] == '' else int(termino.split('x')[1])
+        try: 
+            valor_obtenido= self.contenido[grado]
+            if valor_obtenido == valor: 
+                return True
+            else: 
+                return False
+        except Exception as e: 
+            print(f'Error {repr(e)}')
+            return False
+    def __str__(self):
+        return_str= ''
+        ordenado= dict(sorted(self.contenido.items(), reverse= True))
+        for i in ordenado.keys():
+            grado= '' if i == 1 else i
+            valor= '' if ordenado[i]== 1 else ordenado[i]
+            return_str= return_str + f'{valor}x{grado}'
+        return return_str
+if __name__ == '__main__':
+    poli= Polinomio() 
+    poli.agregar_termino(2,3)
+    poli.agregar_termino(0,-1)
+    print(poli)
+    print(poli.contenido)
+        
+
+
         
        
