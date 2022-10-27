@@ -11,4 +11,7 @@ class Alumno:
 alumno1= Alumno("Irene", 10)
 alumno2= Alumno("Daniel", 3)
 
+alumno1.calificacion()
+alumno2.calificacion()
+
         
