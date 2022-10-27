@@ -8,5 +8,7 @@ class Alumno:
             print("El alumno {} ha suspendido".format(self.nombre))
         else: 
             print("El alumno {} ha aprobado ".format(self.nombre)) 
+alumno1= Alumno("Irene", 10)
+alumno2= Alumno("Daniel", 3)
 
         
